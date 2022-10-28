@@ -6,3 +6,9 @@
 body{
     padding:0 30 0 30 ;
 }
+.api_log
+{
+    margin:auto;
+    display:flex;
+    text-align:center;
+}
