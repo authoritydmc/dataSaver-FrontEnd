@@ -1,0 +1,28 @@
+.upload-form
+{
+    margin:auto;
+    padding:auto;
+  align-items: center;
+  align-content: center;;
+ 
+}
+.file-picker
+{
+    margin-top: 50px;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+.btnGr
+{
+
+    margin-top: 50px;
+    display: flex;
+}
+.uploadBtn
+{
+    margin:auto;
+    display:flex;
+}

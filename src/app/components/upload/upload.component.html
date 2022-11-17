@@ -1,0 +1,62 @@
+<div class="upload-form">
+  <form [formGroup]="form" (ngSubmit)="onUpload()">
+
+
+    
+<h3 class="mb-5 text-lg font-medium text-gray-900 dark:text-blue-500">Select Upload Method</h3>
+<ul class="grid gap-6 w-full md:grid-cols-2">
+    <li>
+        <input type="radio" id="upload_method_1" name="upload_method" value="upload_method_1" class="hidden peer" required=""   formControlName="upload_method">
+        <label for="upload_method_1" class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+            <div class="block">
+                <div class="w-full text-lg font-semibold">Method 1</div>
+                <div class="w-full">MultiPart File upload Method</div>
+            </div>
+            <svg aria-hidden="true" class="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </label>
+    </li>
+    <li>
+        <input type="radio" id="upload_method_2" name="upload_method" value="upload_method_2" class="hidden peer"  formControlName="upload_method">
+        <label for="upload_method_2" class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <div class="block">
+                <div class="w-full text-lg font-semibold">Method 2</div>
+                <div class="w-full">Base64 Upload Method</div>
+            </div>
+            <svg aria-hidden="true" class="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </label>
+    </li>
+</ul>
+<div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert" >
+    <span class="font-medium">Select any Method </span> ==> Please select any upload method 
+  </div>
+
+    
+    <div class="file-picker">
+
+        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-blue-500" for="user_file">Upload file</label>
+        <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg 
+        border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none
+         dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" 
+        aria-describedby="file_upload_help" id="user_file" type="file" 
+         formControlName="user_file" name="user_file" required  (change)="onChange($event)">
+        <!-- <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">A profile picture is useful to confirm your are logged into your account</div> -->
+        
+        
+    </div>
+    <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert" *ngIf="!fileValid">
+        <span class="font-medium">Select File First!!!   </span>==> Please select a file .
+      </div>
+    <!-- show when file is selected -->
+<div *ngIf="1==1" class="btnGr">
+    <button   class=" uploadBtn relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+       Upload
+        </span>
+      </button>
+</div>
+  </form>
+</div>
+<!-- show base64 value -->
+<div>
+{{file_base64_val}}
+</div>

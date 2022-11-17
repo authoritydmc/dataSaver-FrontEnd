@@ -9,7 +9,7 @@ import { UploadService } from './service/upload.service';
 export class AppComponent implements OnInit{
   title = 'datasaver-frontEnd';
 
-  service_status:string='';
+  service_status:string='Not connected to API -Backend error <br> Change Backend IP address in upload Service BaseURL to fix ';
 constructor(private uservice:UploadService){
 
 }
